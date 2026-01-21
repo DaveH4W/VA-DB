@@ -28,10 +28,8 @@
 * Attributes:
 	* Student (student_id, name, email, year)
 	* Event (event_id, title, date, location, capacity)
-
-* Registration (registration_id, student_id, event_id, status, timestamp)
-
-* Organizer (organizer_id, name, contact_info)
+	* Registration (registration_id, student_id, event_id, status, timestamp)
+	* Organizer (organizer_id, name, contact_info)
 
 * Cardinalities: 
 	* Students register for zero or many events; 
@@ -63,17 +61,17 @@ ERD Revision: Note changes since Deliverable 1
 	
 
 	* At least 5 essential queries with sample results:
-	* List events with registered students
+		* List events with registered students
 
-	* Find students registered for multiple events
+		* Find students registered for multiple events
 
-	* Show upcoming events with available slots
+		* Show upcoming events with available slots
 
-	* Summarize participant counts
+		* Summarize participant counts
 
-	* Events by specific organizer
+		* Events by specific organizer
 
-	* Show sample query scripts and outputs
+		* Show sample query scripts and outputs
 
 * Advanced Concepts:
 
@@ -88,6 +86,7 @@ ERD Revision: Note changes since Deliverable 1
 ### Final Demo:
 
 * Organize outputs/tables for easy presentation (1 or 2 page summary tables)
+
 
 
 
