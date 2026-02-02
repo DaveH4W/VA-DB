@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="StoreInventory Classes">
+    <mxGraphModel dx="1024" dy="768" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Classes -->
+        <mxCell id="Product" value="Product\n- id:String\n- name:String\n- price:double\n- qty:int\n- category:String\n+ toCSV():String" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="160" height="110" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="PaymentMethods" value="&lt;&lt;interface&gt;&gt;\nPaymentMethods\n+ payWithCreditCard()\n+ payWithCash()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7" vertex="1" parent="1">
+          <mxGeometry x="320" y="40" width="160" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="Electronics" value="Electronics\n+ Electronics(...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC" vertex="1" parent="1">
+          <mxGeometry x="100" y="180" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="Clothing" value="Clothing\n+ Clothing(...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC" vertex="1" parent="1">
+          <mxGeometry x="320" y="180" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ProductDAO" value="&lt;&lt;interface&gt;&gt;\nProductDAO\n+ saveAll(products)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7" vertex="1" parent="1">
+          <mxGeometry x="100" y="300" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="MSSQLProductDAO" value="MSSQLProductDAO\n+ saveAll(products)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC" vertex="1" parent="1">
+          <mxGeometry x="320" y="300" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="CSVReaderUtil" value="CSVReaderUtil\n+ readProducts(path, type)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4" vertex="1" parent="1">
+          <mxGeometry x="100" y="420" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="CSVWriterUtil" value="CSVWriterUtil\n+ writeProducts(list, path)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4" vertex="1" parent="1">
+          <mxGeometry x="320" y="420" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="StoreInventory" value="StoreInventory\n+ importFromCSV(list)\n+ printAll()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7" vertex="1" parent="1">
+          <mxGeometry x="100" y="520" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="MainClass" value="Main\n+ main(args)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC" vertex="1" parent="1">
+          <mxGeometry x="320" y="520" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Inheritance Edges -->
+        <mxCell id="edge1" style="endArrow=block;endFill=1;html=1;orthogonal=1" edge="1" parent="1" source="Electronics" target="Product">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge2" style="endArrow=block;endFill=1;html=1;orthogonal=1" edge="1" parent="1" source="Clothing" target="Product">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Interface Implementation -->
+        <mxCell id="edge3" style="endArrow=diamond;endFill=0;dashed=1;html=1;orthogonal=1" edge="1" parent="1" source="Electronics" target="PaymentMethods">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge4" style="endArrow=diamond;endFill=0;dashed=1;html=1;orthogonal=1" edge="1" parent="1" source="Clothing" target="PaymentMethods">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- DAO Implementation -->
+        <mxCell id="edge5" style="endArrow=diamond;endFill=0;dashed=1;html=1;orthogonal=1" edge="1" parent="1" source="MSSQLProductDAO" target="ProductDAO">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Usage Associations -->
+        <mxCell id="edge6" style="endArrow=none;html=1;endFill=0;orthogonal=1" edge="1" parent="1" source="MainClass" target="CSVReaderUtil">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge7" style="endArrow=none;html=1;endFill=0;orthogonal=1" edge="1" parent="1" source="MainClass" target="StoreInventory">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge8" style="endArrow=none;html=1;endFill=0;orthogonal=1" edge="1" parent="1" source="StoreInventory" target="ProductDAO">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

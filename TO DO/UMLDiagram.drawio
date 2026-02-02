@@ -1,0 +1,67 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram id="Vfjd3PzrUWqHWJAaN-K4" name="StoreInventory System UML">
+    <mxGraphModel dx="1501" dy="885" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-1" value="&lt;&lt;abstract&gt;&gt;\nProduct\n- id:String\n- name:String\n- price:double\n- qty:int\n- category:String\n+ toCSV():String\n+ toString():String" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC" vertex="1" parent="1">
+          <mxGeometry x="230" y="80" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-2" value="&lt;&lt;interface&gt;&gt;\nPaymentMethods\n+ payWithCreditCard()\n+ payWithCash()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7" vertex="1" parent="1">
+          <mxGeometry x="490" y="80" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-3" value="Electronics\n+ Electronics(...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC" vertex="1" parent="1">
+          <mxGeometry x="230" y="240" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-4" value="Clothing\n+ Clothing(...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC" vertex="1" parent="1">
+          <mxGeometry x="490" y="240" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-5" value="&lt;&lt;interface&gt;&gt;\nProductDAO\n+ saveAll(products)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7" vertex="1" parent="1">
+          <mxGeometry x="230" y="380" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-6" value="MSSQLProductDAO\n+ saveAll(products)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC" vertex="1" parent="1">
+          <mxGeometry x="490" y="380" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-7" value="CSVReaderUtil\n+ readProducts(path, type)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4" vertex="1" parent="1">
+          <mxGeometry x="230" y="520" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-8" value="CSVWriterUtil\n+ writeProducts(products, filePath)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4" vertex="1" parent="1">
+          <mxGeometry x="490" y="520" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-9" value="StoreInventory\n+ importFromCSV(list)\n+ printAll()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7" vertex="1" parent="1">
+          <mxGeometry x="510" y="800" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-10" value="Main\n+ main(args)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC" vertex="1" parent="1">
+          <mxGeometry x="160" y="800" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-11" style="endArrow=block;endFill=1;html=1;orthogonal=1" edge="1" parent="1" source="z08pIo_0qlqn9J0xKVYo-3" target="z08pIo_0qlqn9J0xKVYo-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-12" style="endArrow=block;endFill=1;html=1;orthogonal=1" edge="1" parent="1" source="z08pIo_0qlqn9J0xKVYo-4" target="z08pIo_0qlqn9J0xKVYo-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-13" style="endArrow=diamond;endFill=0;dashed=1;html=1;orthogonal=1" edge="1" parent="1" source="z08pIo_0qlqn9J0xKVYo-3" target="z08pIo_0qlqn9J0xKVYo-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-14" style="endArrow=diamond;endFill=0;dashed=1;html=1;orthogonal=1" edge="1" parent="1" source="z08pIo_0qlqn9J0xKVYo-4" target="z08pIo_0qlqn9J0xKVYo-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-15" style="endArrow=diamond;endFill=0;dashed=1;html=1;orthogonal=1" edge="1" parent="1" source="z08pIo_0qlqn9J0xKVYo-6" target="z08pIo_0qlqn9J0xKVYo-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-16" style="endArrow=none;html=1;orthogonal=1" edge="1" parent="1" source="z08pIo_0qlqn9J0xKVYo-10" target="z08pIo_0qlqn9J0xKVYo-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-17" style="endArrow=none;html=1;orthogonal=1" edge="1" parent="1" source="z08pIo_0qlqn9J0xKVYo-10" target="z08pIo_0qlqn9J0xKVYo-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-18" style="endArrow=none;html=1;orthogonal=1" edge="1" parent="1" source="z08pIo_0qlqn9J0xKVYo-9" target="z08pIo_0qlqn9J0xKVYo-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="z08pIo_0qlqn9J0xKVYo-19" style="endArrow=none;html=1;orthogonal=1" edge="1" parent="1" source="z08pIo_0qlqn9J0xKVYo-9" target="z08pIo_0qlqn9J0xKVYo-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
